@@ -1,0 +1,14 @@
+<nav>
+    <div class="bg-pink-300 flex items-center justify-between px-8 py-4">
+        <div>
+            <a routerLink="/inicio"><img src="assets/img/imagen-navbar.png" class="w-25" alt="Imagen navbar"></a>
+        </div>
+        <div class="flex flex-row gap-5 text-white text-2xl">
+            <!--añadiendo rutas-->
+            <a [routerLink]="['/inicio']" class="hover:underline hover:font-bold">Inicio</a>
+            <a [routerLink]="['/body']" class="hover:underline hover:font-bold">Productos</a>
+            <a [routerLink]="['/contacto']" class="hover:underline hover:font-bold">Cursos y talleres</a>
+            <!--añadiendo rutas-->
+        </div>
+    </div>
+</nav>
