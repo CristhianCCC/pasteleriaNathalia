@@ -1,18 +1,112 @@
-<div class="sm:p-0 sm:m-0 md:p-20 md:m-20 bg-white rounded-2xl shadow-2xl">
-    <form action="">
+<div class="sm:p-0 sm:m-0 md:p-20 md:m-20 bg-white rounded-2xl shadow-2xl py-10">
+
+    <h1 class="text-2xl text-center py-10 font-bold">Nuestros talleres!</h1>
+    <section class="lg:flex 2xl:justify-around gap-10">
+        <div id="controls-carousel" class="relative w-full" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="relative overflow-hidden rounded-lg h-full">
+                <!-- Item 1 -->
+                <div class="duration-700 ease-in-out block" data-carousel-item>
+                    <img src={{imagen1}} class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="duration-700 ease-in-out block" data-carousel-item>
+                    <img src={{imagen2}} class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-2 sm:px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-2 sm:px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+        <div class="text-base/8">
+            <p class="sm:m-5 justify-center">En pasteleria Nathalia no solo nos especializamos en crear los postres más deliciosos, también compartimos nuestra pasión por la repostería con todos aquellos que deseen aprender el arte de lo dulce.
+            Te invitamos a conocer nuestros talleres especiales, pensados tanto para principiantes como para quienes ya tienen experiencia en la cocina. ¡Ideal para regalar, disfrutar en familia o perfeccionar tus habilidades!</p>
+            <ul class="list-disc p-5">
+                <li class="justify-center text-base/7">
+                    🍰 <span class="font-bold text-emerald-700">Taller de Pasteles Clásicos</span>
+                    <p>Aprende a preparar bizcochos esponjosos, rellenos irresistibles y técnicas básicas de decoración.</p>
+                </li>
+                <li>
+                    🧁 <span class="font-bold text-emerald-700">Taller de Cupcakes Creativos</span>
+                    <p>Crea cupcakes únicos decorados con técnicas de manga pastelera y toppers personalizados.</p>
+                </li>
+                <li>
+                    🍩 <span class="font-bold text-emerald-700">Taller de Donas Artesanales</span>
+                    <p>Desde la masa hasta el glaseado perfecto: todo lo que necesitas para lograr las mejores donas.</p>
+                </li>
+                <li>
+                    🍪 <span class="font-bold text-emerald-700">Taller de Galletas Decoradas</span>
+                    <p>Diseña y decora galletas para cualquier ocasión utilizando glaseado real y técnicas profesionales.</p>
+                </li>
+                <li>
+                    🍫 <span class="font-bold text-emerald-700">Taller de Chocolatería Básica</span>
+                    <p>Sumérgete en el mundo del chocolate: bombones, trufas y técnicas de temperado.</p>
+                </li>
+                <li>
+                    🎂 <span class="font-bold text-emerald-700">Taller de Tortas Temáticas para Eventos</span>
+                    <p>Aprende a diseñar y decorar tortas especiales para bodas, cumpleaños y celebraciones.</p>
+                </li>
+                <li>
+                    👧👦 <span class="font-bold text-emerald-700">Taller Infantil de Mini Reposteros</span>
+                    <p>Un espacio divertido donde los más pequeños pueden explorar la repostería de manera segura.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+
+
+<div class="sm:p-0 sm:m-0 md:p-20 md:m-20 bg-white rounded-2xl shadow-2xl my-10">
+    <!--asignandole el nombre que se definio en el componente-->
+    <!--asignandole funcion de guardar-->
+    <form [formGroup] = "usuarioForm" (ngSubmit)="guardar()">
         <h2 class="text-center text-2xl font-bold py-10 ">Dejanos tus datos nos pondremos en contacto contigo</h2>
-        <div class="flex flex-col justify-center gap-5">
-            <label for="nombre" class="font-bold uppercase">Nombre:</label>
-            <input type="text" id="nombre" class="rounded border border-amber-900 w-auto p-2">
-            <label for="edad" class="font-bold uppercase">Edad:</label>
-            <input type="number" id="edad" class="rounded border border-amber-900 w-auto p-2">
-            <label for="taller" class="font-bold uppercase">Taller de interes:</label>
-            <input type="text" id="taller" class="rounded border border-amber-900 w-auto p-2">
-            <label for="correo" class="uppercase font-bold">Correo:</label>
-            <input type="text" class="rounded border border-amber-900 w-auto p-2">
+        <div class="flex flex-col justify-center gap-5 lg:w-full">
+                <label for="nombre" class="font-bold uppercase">Nombre:</label>
+                <!--asignandole el nombre al campo del formulario definido en el componente-->
+                <input type="text" formControlName="nombre" class="rounded border border-amber-900 w-auto p-2" >
+
+                <label for="edad" class="font-bold uppercase">Edad:</label>
+                <!--asignandole el nombre al campo del formulario definido en el componente-->
+                <input type="number" formControlName="edad" class="rounded border border-amber-900 w-auto p-2" >
+
+
+                <label for="taller" class="font-bold uppercase">Taller de interes:</label>
+                <!--asignandole el nombre al campo del formulario definido en el componente-->
+                <input type="text" formControlName="taller" class="rounded border border-amber-900 w-auto p-2"  >
+                
+                <label for="correo" class="uppercase font-bold">Correo:</label>
+                <!--asignandole el nombre al campo del formulario definido en el componente-->
+                <input type="text" formControlName="correo" class="rounded border border-amber-900 w-auto p-2"  >
+
+                <!--añadiendo validaciones para todos los campos-->
+                <div *ngIf="usuarioForm.get('nombre') && usuarioForm.get('nombre')?.touched || usuarioForm.get('edad') && usuarioForm.get('edad')?.touched || usuarioForm.get('taller') && usuarioForm.get('taller')?.touched" class="text-white bg-red-500 p-2 m-2 text-2xl text-center">Todos los campos son obligatorios</div>
+
+                <!--añadiendo validaciones para el campo del correo-->
+                <div *ngIf="usuarioForm.get('correo')?.errors?.['required'] && usuarioForm.get('correo')?.touched" class="text-white bg-red-500 p-2 m-2 text-2xl text-center">El formato del correo no es valido</div>
+
+                <div class="flex justify-center pt-10">
+                    <button class="cursor-pointer bg-pink-300 p-2 rounded-2xl text-white hover:bg-pink-800 uppercase" type="submit" [disabled]="!usuarioForm.valid" [ngClass]="{
+                    'cursor-not-allowed': !usuarioForm.valid, 'cursor-pointer': usuarioForm.valid}" >Enviar</button>
+                </div>
         </div>
     </form>
-    <div class="flex justify-center pt-10">
-        <button class="cursor-pointer bg-pink-300 p-2 rounded-2xl text-white hover:bg-pink-800 uppercase">Enviar</button>
-    </div>
+    
+    
+
 </div>
