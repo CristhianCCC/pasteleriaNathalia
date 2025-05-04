@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../product.service';
-import { Product } from '../../product';
+import { Product } from '../../Product';
 import { HttpErrorResponse } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
@@ -18,9 +19,12 @@ export class CardComponent implements OnInit{
 
 
   /*logica para indicar lo primero que se va a cargar*/
-  ngOnInit(){ this.obtenerProductos(); }
+  ngOnInit()
+  { this.obtenerProductos(); 
 
-  public productos: Product[] = []
+  }
+
+  public productos: Product[] = []  
 
 constructor (private productService: ProductService){}
 

@@ -27,5 +27,4 @@ export class ContactoComponent {
   guardar(){
     console.log(this.usuarioForm.value);
   }
-
 }

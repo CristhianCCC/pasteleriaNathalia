@@ -1,7 +1,5 @@
 package com.ccc.pastelerianatalia.model;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.JsonSerializable;
+import com.ccc.pastelerianatalia.model.enums.ProductoTamanos;
 import jakarta.persistence.*;
 
 @Entity
@@ -19,12 +17,23 @@ public class Producto {
 
     private String imageUrl;
 
-    public Producto(Long id, String nombre, String descripcion, Double precio, String imageUrl) {
+    private String ingredientes;
+
+    private Integer cantidad;
+
+    @Enumerated(EnumType.STRING)
+    private ProductoTamanos tamanos;
+
+
+    public Producto(Long id, String nombre, String descripcion, Double precio, String imageUrl, String ingredientes, ProductoTamanos productoTamanos, Integer cantidad) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.imageUrl=imageUrl;
+        this.ingredientes = ingredientes;
+        this.cantidad = cantidad;
+        this.tamanos = productoTamanos;
     }
 
     public Producto() {
@@ -68,5 +77,29 @@ public class Producto {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(String ingredientes) {
+        this.ingredientes = ingredientes;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public ProductoTamanos getTamanos() {
+        return tamanos;
+    }
+
+    public void setTamanos(ProductoTamanos tamanos) {
+        this.tamanos = tamanos;
     }
 }

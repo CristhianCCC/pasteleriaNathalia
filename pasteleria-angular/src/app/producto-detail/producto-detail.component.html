@@ -1,0 +1,30 @@
+<!--si el producto existe, entonces se muestra la informacion en el html-->
+<div *ngIf="product" class="flex flex-col lg:flex-row justify-center gap-10 items-center md:p-20 md:m-20 rounded-2xl shadow-2xl py-10 bg-white">
+    <div>
+        <img class="w-100 h-100 xl:w-200 xl:h-200 rounded-2xl shadow-2xl" src={{product.imageUrl}} alt={{product.nombre}}>
+    </div>
+    <div>
+        <ul class="flex flex-col gap-2">
+            <li class="text-2xl "><span class="font-bold text-amber-800">Nombre:</span> {{product.nombre}}</li>
+            <li class="text-2xl"><span class="font-bold text-amber-800">Descripcion:</span> {{product.descripcion}}</li>
+            <li class="text-2xl"><span class="font-bold text-amber-800">Ingredientes:</span> {{product.ingredientes}}</li>
+            <li class="text-2xl">
+                <span class="font-bold text-amber-800">Precio:</span> {{product.precio | currency:'cop':'symbol':'1.0-0'}}
+            </li>
+        </ul>
+        <form (ngSubmit)="totalAPagar()" [formGroup]="pedidoForm" class="py-10 flex flex-col gap-4">
+            <h2 class="text-2xl font-bold py-5">Realizar pedido</h2>
+            <input type="number" formControlName="cantidad" placeholder="Digite la cantidad" class="border border-amber-800 w-full rounded-2xl">
+
+            <select name="tamaños" formControlName="tamaños" id="tamaños" class="border border-amber-800 w-full rounded-2xl">
+                <option value= "pequeño" >Pequeña</option>
+                <option value= "mediano" >Mediana</option>
+                <option value= "grande" >Grande</option>
+            </select>
+            <button type="submit" class="cursor-pointer bg-pink-300 p-2 rounded-2xl text-white hover:bg-pink-800 uppercase">Agregar al carrito</button>
+        </form>
+        <h2 class="text-2xl text-amber-800">Total a pagar: <span class="font-bold">{{total | currency:'cop': 'symbol': '1.0-0'}}</span></h2>
+    </div>
+</div>
+
+

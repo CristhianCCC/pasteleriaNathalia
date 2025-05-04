@@ -1,5 +1,4 @@
 <div class="sm:p-0 sm:m-0 md:p-20 md:m-20 bg-white rounded-2xl shadow-2xl py-10">
-
     <h1 class="text-2xl text-center py-10 font-bold">Nuestros talleres!</h1>
     <section class="lg:flex 2xl:justify-around gap-10">
         <div id="controls-carousel" class="relative w-full" data-carousel="static">
@@ -98,11 +97,11 @@
                 <div *ngIf="usuarioForm.get('nombre') && usuarioForm.get('nombre')?.touched || usuarioForm.get('edad') && usuarioForm.get('edad')?.touched || usuarioForm.get('taller') && usuarioForm.get('taller')?.touched" class="text-white bg-red-500 p-2 m-2 text-2xl text-center">Todos los campos son obligatorios</div>
 
                 <!--añadiendo validaciones para el campo del correo-->
-                <div *ngIf="usuarioForm.get('correo')?.errors?.['required'] && usuarioForm.get('correo')?.touched" class="text-white bg-red-500 p-2 m-2 text-2xl text-center">El formato del correo no es valido</div>
+                <div *ngIf="usuarioForm.get('correo')?.errors && usuarioForm.get('correo')?.touched" class="text-white bg-red-500 p-2 m-2 text-2xl text-center">El formato del correo no es valido</div>
 
                 <div class="flex justify-center pt-10">
                     <button class="cursor-pointer bg-pink-300 p-2 rounded-2xl text-white hover:bg-pink-800 uppercase" type="submit" [disabled]="!usuarioForm.valid" [ngClass]="{
-                    'cursor-not-allowed': !usuarioForm.valid, 'cursor-pointer': usuarioForm.valid}" >Enviar</button>
+                    'cursor-not-allowed': !usuarioForm.valid, 'cursor-pointer': usuarioForm.valid}">Enviar</button>
                 </div>
         </div>
     </form>

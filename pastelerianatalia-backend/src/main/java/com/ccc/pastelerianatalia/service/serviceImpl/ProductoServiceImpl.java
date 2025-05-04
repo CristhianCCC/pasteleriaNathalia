@@ -1,11 +1,9 @@
 package com.ccc.pastelerianatalia.service.serviceImpl;
-
 import com.ccc.pastelerianatalia.model.Producto;
 import com.ccc.pastelerianatalia.repository.ProductoRepository;
 import com.ccc.pastelerianatalia.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -39,6 +37,8 @@ public class ProductoServiceImpl implements ProductoService {
             productoEncontrado.setDescripcion(producto.getDescripcion());
             productoEncontrado.setPrecio(producto.getPrecio());
             productoEncontrado.setImageUrl(producto.getImageUrl());
+            productoEncontrado.setIngredientes(producto.getIngredientes());
+            productoEncontrado.setTamanos(producto.getTamanos());
             return productoRepository.save(productoEncontrado);
         }).orElseThrow(() -> new RuntimeException("producto con el id" + id + " no fue encontrado"));
     }

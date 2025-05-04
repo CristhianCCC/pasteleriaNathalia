@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/producto")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProductoController {
 
     @Autowired
@@ -25,8 +25,12 @@ public class ProductoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Producto>> obtenerProductoPorId(@PathVariable Long id){
-            Optional<Producto> productoOptional = productoService.obtenerProductoPorId(id);
-            return ResponseEntity.ok(productoOptional);
+            try{
+                Optional<Producto> productoOptional = productoService.obtenerProductoPorId(id);
+                return ResponseEntity.ok(productoOptional);
+            }catch (Exception e){
+                return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED).build();
+            }
     }
 
     @PostMapping

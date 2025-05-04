@@ -1,0 +1,9 @@
+.imgHeader{
+    filter: brightness(75%); /*Para oscurecer la imagen de fondo*/
+}
+
+.custom-icon {
+    font-size: 2.5rem !important;
+    width: 2.5rem;
+    height: 2.5rem;
+}
