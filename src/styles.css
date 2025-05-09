@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "flowbite";
+@font-face {
+    font-family: 'Pacifico';
+    src: url('./assets/fonts/Pacifico-Regular.ttf');
+  }
+
+  body{
+    font-family: 'Pacifico';
+    background-color: #f8bbd0;
+  }
+
+  
